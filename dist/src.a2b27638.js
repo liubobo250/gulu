@@ -12442,20 +12442,13 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 var _default = {
   props: {
     icon: {},
     iconPosition: {
       default: "left",
       validator: function validator(value) {
-        if (value !== "left" && value !== "right") {
-          return false;
-        } else {
-          return true;
-        }
+        return value !== "left" || value !== "right";
       }
     }
   }
@@ -12478,15 +12471,13 @@ exports.default = _default;
     { staticClass: "g-button" },
     [
       _vm.icon && _vm.iconPosition === "left"
-        ? _c("svg", { staticClass: "icon" }, [
-            _c("use", { attrs: { "xlink:href": "#i-" + _vm.icon } })
-          ])
+        ? _c("g-icon", { attrs: { name: _vm.icon } })
         : _vm._e(),
+      _vm._v(" "),
       _vm._t("default"),
+      _vm._v(" "),
       _vm.icon && _vm.iconPosition === "right"
-        ? _c("svg", { staticClass: "icon" }, [
-            _c("use", { attrs: { "xlink:href": "#i-" + _vm.icon } })
-          ])
+        ? _c("g-icon", { attrs: { name: _vm.icon } })
         : _vm._e()
     ],
     2
@@ -12525,6 +12516,71 @@ render._withStripped = true
       
       }
     })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/icon.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+var _default = {
+  props: ["name"]
+};
+exports.default = _default;
+        var $68d0c9 = exports.default || module.exports;
+      
+      if (typeof $68d0c9 === 'function') {
+        $68d0c9 = $68d0c9.options;
+      }
+    
+        /* template */
+        Object.assign($68d0c9, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("svg", { staticClass: "icon" }, [
+    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-68d0c9",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$68d0c9', $68d0c9);
+          } else {
+            api.reload('$68d0c9', $68d0c9);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -12532,14 +12588,18 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _button = _interopRequireDefault(require("./button"));
 
+var _icon = _interopRequireDefault(require("./icon"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue.default.component("g-button", _button.default);
 
+_vue.default.component("g-icon", _icon.default);
+
 new _vue.default({
   el: "#app"
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
