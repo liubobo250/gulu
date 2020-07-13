@@ -1,3 +1,11 @@
+@keyframes spin-data-v-582278 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
 .g-button[data-v-582278] {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -14,6 +22,9 @@
 }
 .g-button[data-v-582278]:focus {
   outline: none;
+}
+.g-button .loading[data-v-582278] {
+  animation: spin-data-v-582278 2s infinite linear;
 }
 .icon[data-v-68d0c9] {
   width: 1em;
