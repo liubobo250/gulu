@@ -15,6 +15,13 @@ export default {
     icon: {},
     iconPosition: {
       default: "left",
+      validator(value) {
+        if (value !== "left" && value !== "right") {
+          return false;
+        } else {
+          return true;
+        }
+      },
     },
   },
 };

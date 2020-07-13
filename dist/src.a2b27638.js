@@ -12449,7 +12449,14 @@ var _default = {
   props: {
     icon: {},
     iconPosition: {
-      default: "left"
+      default: "left",
+      validator: function validator(value) {
+        if (value !== "left" && value !== "right") {
+          return false;
+        } else {
+          return true;
+        }
+      }
     }
   }
 };
