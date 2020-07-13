@@ -12438,7 +12438,21 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  props: {
+    icon: {},
+    iconPosition: {
+      default: "left"
+    }
+  }
+};
 exports.default = _default;
         var $582278 = exports.default || module.exports;
       
@@ -12452,7 +12466,24 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "g-button" }, [_vm._t("default")], 2)
+  return _c(
+    "button",
+    { staticClass: "g-button" },
+    [
+      _vm.icon && _vm.iconPosition === "left"
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": "#i-" + _vm.icon } })
+          ])
+        : _vm._e(),
+      _vm._t("default"),
+      _vm.icon && _vm.iconPosition === "right"
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": "#i-" + _vm.icon } })
+          ])
+        : _vm._e()
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

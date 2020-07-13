@@ -1,12 +1,31 @@
 <template>
-  <button class="g-button"><slot></slot></button>
+  <button class="g-button">
+    <svg class="icon" v-if="icon && iconPosition === 'left'">
+      <use :xlink:href="`#i-${icon}`"></use></svg
+    ><slot></slot
+    ><svg class="icon" v-if="icon && iconPosition === 'right'">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+  </button>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    icon: {},
+    iconPosition: {
+      default: "left",
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+}
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
