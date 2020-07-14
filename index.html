@@ -30,7 +30,12 @@
   </head>
   <body>
     <div id="app">
-      <g-button icon="left" icon-position="left">
+      <g-button
+        icon="left"
+        icon-position="right"
+        :loading="loading"
+        @click="loading = !loading"
+      >
         meijin
       </g-button>
     </div>

@@ -1,9 +1,15 @@
 <template>
-  <button class="g-button">
-    <g-icon name="loading" class="loading"></g-icon>
-    <g-icon :name="icon" v-if="icon && iconPosition === 'left'"></g-icon>
+  <button class="g-button" @click="$emit('click')">
+    <span v-if="icon && iconPosition === 'left'"
+      ><g-icon v-if="loading" name="loading" class="loading"></g-icon>
+      <g-icon :name="icon" v-else></g-icon
+    ></span>
+
     <slot></slot>
-    <g-icon :name="icon" v-if="icon && iconPosition === 'right'"></g-icon>
+    <span v-if="icon && iconPosition === 'right'"
+      ><g-icon v-if="loading" name="loading" class="loading"></g-icon>
+      <g-icon :name="icon" v-else></g-icon
+    ></span>
   </button>
 </template>
 
@@ -16,6 +22,9 @@ export default {
       validator(value) {
         return value !== "left" || value !== "right";
       },
+    },
+    loading: {
+      default: false,
     },
   },
 };

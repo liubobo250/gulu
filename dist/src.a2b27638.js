@@ -12443,6 +12443,12 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = {
   props: {
     icon: {},
@@ -12451,6 +12457,9 @@ var _default = {
       validator: function validator(value) {
         return value !== "left" || value !== "right";
       }
+    },
+    loading: {
+      default: false
     }
   }
 };
@@ -12469,18 +12478,45 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    { staticClass: "g-button" },
+    {
+      staticClass: "g-button",
+      on: {
+        click: function($event) {
+          return _vm.$emit("click")
+        }
+      }
+    },
     [
-      _c("g-icon", { staticClass: "loading", attrs: { name: "loading" } }),
-      _vm._v(" "),
       _vm.icon && _vm.iconPosition === "left"
-        ? _c("g-icon", { attrs: { name: _vm.icon } })
+        ? _c(
+            "span",
+            [
+              _vm.loading
+                ? _c("g-icon", {
+                    staticClass: "loading",
+                    attrs: { name: "loading" }
+                  })
+                : _c("g-icon", { attrs: { name: _vm.icon } })
+            ],
+            1
+          )
         : _vm._e(),
       _vm._v(" "),
       _vm._t("default"),
       _vm._v(" "),
       _vm.icon && _vm.iconPosition === "right"
-        ? _c("g-icon", { attrs: { name: _vm.icon } })
+        ? _c(
+            "span",
+            [
+              _vm.loading
+                ? _c("g-icon", {
+                    staticClass: "loading",
+                    attrs: { name: "loading" }
+                  })
+                : _c("g-icon", { attrs: { name: _vm.icon } })
+            ],
+            1
+          )
         : _vm._e()
     ],
     2
@@ -12600,7 +12636,10 @@ _vue.default.component("g-button", _button.default);
 _vue.default.component("g-icon", _icon.default);
 
 new _vue.default({
-  el: "#app"
+  el: "#app",
+  data: {
+    loading: true
+  }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -12630,7 +12669,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55125" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63520" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
