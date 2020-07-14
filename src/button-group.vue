@@ -3,7 +3,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    for (let name of this.$el.children) {
+      if (name.nodeName !== "BUTTON") {
+        console.warn(`您需要传入的是button标签，但你传入了${name.nodeName}`);
+      }
+    }
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -11,7 +19,9 @@ export default {};
   display: inline;
   .g-button {
     border-radius: 0 !important;
-    margin-left: -1px;
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius) !important;
       border-bottom-left-radius: var(--border-radius) !important;
