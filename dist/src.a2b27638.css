@@ -31,3 +31,22 @@
   height: 1em;
   vertical-align: -0.15em;
 }
+.g-button-group[data-v-58a7aa] {
+  display: inline;
+}
+.g-button-group .g-button[data-v-58a7aa] {
+  border-radius: 0 !important;
+  margin-left: -1px;
+}
+.g-button-group .g-button[data-v-58a7aa]:first-child {
+  border-top-left-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+}
+.g-button-group .g-button[data-v-58a7aa]:last-child {
+  border-top-right-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+}
+.g-button-group .g-button[data-v-58a7aa]:hover {
+  position: relative;
+  z-index: 1;
+}
